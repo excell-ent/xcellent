@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komolafe Ayoola Excellent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ffb74d;
+            --secondary-color: #ff8f00;
+            --text-color: #333;
+            --background-color: #f8f0e3;
+            --accent-color: #4CAF50;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            transition: background-color 0.5s ease;
+            overflow-x: hidden;
+        }
+        body.dark-mode {
+            --primary-color: #ff8f00;
+            --secondary-color: #ffb74d;
+            --text-color: #eee;
+            --background-color: #2c3e50;
+            --accent-color: #8BC34A;
+        }
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 0;
+            letter-spacing: 2px;
+            animation: fadeIn 1s ease, pulse 2s infinite alternate;
+        }
+        header p {
+            color: #fff8e1;
+            font-size: 1.2em;
+            margin-top: 15px;
+            font-weight: 400;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.1);
+            
+            padding: 15px 0;
+            text-align: center;
+            transition: background-color 0.5s ease;
+            width: 100%;
+        }
+    
+         }
+        }
+        nav.dark-mode {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        nav ul li a:hover {
+            color: #ffdb58;
+            transform: translateY(-2px);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 1s ease, slideIn 0.5s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+            box-sizing: border-box;
+        }
+        .container.dark-mode {
+            background-color: #34495e;
+        }
+        .section {
+            margin-bottom: 60px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .section h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: 700;
+            animation: slideIn 1s ease, pulse 2s infinite alternate;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .about-me {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .about-me-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease, slideIn 0.5s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .about-me-image img {
+            width: 100%;
+            display: block;
+        }
+        .about-me-text {
+            flex: 1;
+            min-width: 300px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .about-me-text h3 {
+            font-size: 2em;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .about-me-text p {
+            font-size: 1.1em;
+            color: var(--text-color);
+            line-height: 1.8;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .skills-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .skill-card {
+            background-color: #fffaf0;
+            border-radius: 12px;
+            padding: 20px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+            animation: fadeIn 1s ease, slideIn 0.5s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .skill-card.dark-mode {
+            background-color: #4a148c;
+        }
+        .skill-card h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .skill-card ul{
+             width: 100%;
+             padding-left: 20px;
+             box-sizing: border-box;
+        }
+        .skill-card ul li{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .projects-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .project-card {
+            background-color: #fffaf0;
+            border-radius: 12px;
+            padding: 20px;
+            flex: 1;
+            min-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+            animation: fadeIn 1s ease, slideIn 0.5s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .project-card.dark-mode{
+            background-color: #4a148c;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .project-card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .project-card h3 {
+            font-size: 1.5em;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .project-card p {
+            font-size: 1.1em;
+            color: var(--text-color);
+            line-height: 1.8;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .contact-section {
+            text-align: center;
+            background-color: #f5f5dc;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 60px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.5s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .contact-section.dark-mode {
+            background-color: #2c3e50;
+        }
+        .contact-section h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 700;
+            animation: pulse 2s infinite alternate;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .contact-section p {
+            font-size: 1.1em;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .contact-section ul {
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .contact-section ul li {
+            display: inline;
+            margin: 0 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .contact-section ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .contact-section ul li a:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        #toggle-dark-mode {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #toggle-dark-mode:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        #dark-mode-icon {
+            height: 24px;
+            width: 24px;
+            stroke: #ffdb58; /* Eye-catching yellow */
+            fill: none;
+            stroke-width: 2;
+            transition: stroke 0.3s ease;
+        }
+        .dark-mode #dark-mode-icon {
+            stroke: #8BC34A; /* Green for dark mode */
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 0.9em;
+            margin-top: 60px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .section h2 {
+                font-size: 2em;
+            }
+            .about-me {
+                flex-direction: column;
+            }
+            .about-me-image {
+                min-width: 100%;
+            }
+            .about-me-text {
+                min-width: 100%;
+            }
+            .skills-section {
+                flex-direction: column;
+            }
+            .skill-card {
+                min-width: 100%;
+                margin-bottom: 20px;
+            }
+            .projects-section {
+                flex-direction: column;
+            }
+            .project-card {
+                min-width: 100%;
+                margin-bottom: 20px;
+            }
+            nav ul li {
+                display: block;
+                margin: 15px 0;
+          float: left;
+         padding: 0 8px;
+         border-radius: 30px;
+         
+            }
+            header h1{
+                font-size: 2.5em;
+            }
+            header p{
+                font-size: 1.1em;
+            }
+            nav ul li{
+                margin: 10px 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.04); }
+        }
+    </style>
+</head>
+<body class="">
+    <button id="toggle-dark-mode" aria-label="Toggle Dark Mode">
+        <svg id="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+    </button>
+    <header>
+        <h1>Komolafe Ayoola Excellent</h1>
+        <p>Student Nurse & Web Developer</p>
+    </header>
+    <nav class="">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container ">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-me">
+                <div class="about-me-image">
+                    <img src="placeholder-image.jpg" alt="Komolafe Ayoola Excellent">
+                </div>
+                <div class="about-me-text">
+                    <h3>A Multi-Passionate Student</h3>
+                    <p>
+                        Hello! I'm Komolafe Ayoola Excellent, a student nurse at LAUTECH and a web developer.
+                        I'm passionate about combining my healthcare knowledge with my technical skills to create
+                        innovative solutions. I believe in lifelong learning and strive to excel in everything I do.
+                    </p>
+                    <p>
+                        My goal is to leverage technology to improve healthcare outcomes and patient experiences.
+                        I'm excited about the future of healthcare and the role technology will play in it.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-section">
+                <div class="skill-card ">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                       
+                    </ul>
+                </div>
+                <div class="skill-card ">
+                    <h3>Healthcare</h3>
+                    <ul>
+                        <li>Nursing Care</li>
+                        <li>Patient Safety</li>
+                        <li>Health Education</li>
+                        
+                    </ul>
+                </div>
+                <div class="skill-card ">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Git hub</li>
+                        <li>VS Code</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects-section">
+                <div class="project-card ">
+                    <img src="project1.jpg" alt="Project 1">
+                    <a href="Gemini.html" style="
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid beige;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 15px;
+    position: relative;
+    left: 30%;
+    background-color: #ffbfd562;
+ ">visit web</a>
+                    <h3>Project 1: Health Website</h3>
+                    <p>Developed a health care website template with BMI calculator</p>
+                </div>
+                <div class="project-card ">
+<img src="project2.jpg" alt="Project 2">
+                    <a href="health gem.html" style="
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid beige;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 15px;
+    position: relative;
+    left: 30%;
+    background-color: #ffbfd562;
+ "> visit web</a>
+                    <h3>Developed a website template  for a local clinic, improving online presence and patient engagement.</h3>
+                    <p>Created a personal portfolio website to showcase skills and projects.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section contact-section">
+            <h2>Contact Me</h2>
+            <p>I'm always open to new opportunities and collaborations. Feel free to reach out to me!</p>
+            <ul>
+                <li><a href="mailto: ayexcellent123@gmail.com">Email</a></li>
+  
+                <li><a href="https://www.linkedin.com/in/ayoola-komolafe-b0871230a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a></li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>© 2025 Komolafe Ayoola Excellent. All rights reserved.</p>
+    </footer>
+    <script>
+        const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
+        const body = document.body;
+        const nav = document.querySelector('nav');
+        const container = document.querySelector('.container');
+        const skillCards = document.querySelectorAll('.skill-card');
+        const projectCards = document.querySelectorAll('.project-card');
+        const contactSection = document.querySelector('.contact-section');
+        const darkModeIcon = document.getElementById('dark-mode-icon');
+
+        toggleDarkModeButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            nav.classList.toggle('dark-mode');
+            container.classList.toggle('dark-mode');
+            skillCards.forEach(card => card.classList.toggle('dark-mode'));
+            projectCards.forEach(card => card.classList.toggle('dark-mode'));
+            contactSection.classList.toggle('dark-mode');
+
+            // Change the SVG icon based on the mode
+            if (body.classList.contains('dark-mode')) {
+                darkModeIcon.innerHTML = `<path d="M12 3a6 6 0 0 1 9 9 9 9 0 1 0-9-9Z"/>`; // Moon icon
+            } else {
+                darkModeIcon.innerHTML = `<path d="M12 17v-6m0-4v-4m0 10h6m-6-6h-6m6 6v6m3.5-9.5L17.5 7.5m-5 5L7.5 7.5"/>`; // Sun icon
+            }
+        });
+    </script>
+</body>
+</html>
